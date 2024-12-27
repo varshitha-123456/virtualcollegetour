@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive College Map</title>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #map {
+      width: 100%;
+      max-width: 1000px;
+      height: 600px;
+      margin: 20px auto;
+      border: 2px solid #007BFF; 
+      border-radius: 10px;
+    }
+    h1 {
+      color: #007BFF;
+      margin-top: 20px;
+    }
+    .popup-content {
+      text-align: center;
+    }
+    .popup-content img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .popup-content video {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<link rel="icon" href="favicon.ico">
+<body>
+  <h1>College Interactive Map</h1>
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script>
+    // Initialize the map
+    const map = L.map('map').setView([13.32694, 77.12619], 18);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors',
+    }).addTo(map);
+
+    // Define locations with videos, images, and descriptions
+    const locations = [
+      {
+        name: 'ADMIN BLOCK',
+        coordinates: [13.32694, 77.12619],
+        description: 'The administrative hub for managing academic and operational resources.',
+        image: 'image.jpg',
+        video: 'princi.mp4',  // Example video URL
+      },
+      {
+        name: 'CSE BLOCK',
+        coordinates: [13.32612, 77.12628],
+        description: 'Home to the Computer Science department, with cutting-edge labs and lecture halls.',
+        image: 'cs.jpg',
+        video: '',  // No video for this location
+      },
+      {
+        name: 'BIOTECHNOLOGY AND CHEMICAL BLOCK',
+        coordinates: [13.32753, 77.12453],
+        description: 'Focuses on designing and optimizing processes to produce, transform, and utilize chemicals, materials, and energy sustainably.',
+        image: 'chem.jpg',
+        video: 'https://www.w3schools.com/html/movie.mp4',  // Example video URL
+      },
+      {
+        name: 'SIT COLLEGE CANTENE',
+        coordinates: [13.32598, 77.12695],
+        description: 'Facilities for Electrical and Electronics Engineering students to innovate and connect.',
+        image: 'https://via.placeholder.com/250x150?text=EEE+Block',
+      },
+      {
+        name: 'MECHANICAL WORKSHOP',
+        coordinates: [13.32616, 77.12454],
+        description: 'Facilities for Electrical and Electronics Engineering students to innovate and connect.',
+        image: 'https://via.placeholder.com/250x150?text=EEE+Block',
+      },
+
+      // Add more locations as necessary
+    ];
+
+    // Add markers for each location
+    locations.forEach((location) => {
+      let popupContent = `
+        <div class="popup-content">
+          <img src="${location.image}" alt="${location.name}" />
+          <h3>${location.name}</h3>
+          <p>${location.description}</p>
+      `;
+
+      // If the location has a video, add it to the popup
+      if (location.video) {
+        popupContent += `
+          <video width="250" controls>
+            <source src="${location.video}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        `;
+      }
+
+      popupContent += '</div>';
+
+      L.marker(location.coordinates)
+        .addTo(map)
+        .bindPopup(popupContent);
+    });
+  </script>
+</body>
+</html>

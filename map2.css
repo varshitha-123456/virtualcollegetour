@@ -1,0 +1,182 @@
+* {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box; /* Corrected from border to box-sizing */
+    margin: 0;
+}
+
+/* Navbar styles */
+.navbar {
+    height: 100px;
+    background-color: #4f5a5a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nav-logo {
+    height: 100px;
+    width: 150px;
+}
+
+.logo {
+    background-image: url("download.jpg");
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+}
+
+.border {
+    border: 2px solid transparent;
+}
+
+.border:hover {
+    border: 1px solid white;
+}
+
+.add-1st {
+    color: #cccccc;
+    font-size: 1rem;
+    margin: 8px;
+}
+
+.add-2nd {
+    color: white;
+    font-size: 1rem;
+    margin: 3px;
+}
+
+.add-logo {
+    display: flex;
+    align-items: center;
+}
+
+.border2:hover {
+    border: 1px solid white;
+}
+
+/* Search bar styles */
+.nav-search {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #f3f3f3; /* Change from pink to a neutral color */
+    height: 40px;
+    width: 620px;
+    border-radius: 4px;
+}
+
+.nav-search:hover {
+    border: 2px solid orange;
+}
+
+.Search-Select {
+    width: 50px;
+    text-align: center;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border: none;
+    background-color: #f3f3f3;
+}
+
+.Search-input {
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+}
+
+.search-icon {
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: rgb(133, 71, 133);
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+/* Panel styles */
+.panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #333; /* Optional: to make it stand out from the navbar */
+    color: white;
+}
+
+.panel-all {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.panel-ops {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 70%;
+    font-size: 0.85rem;
+}
+
+.depart,.events
+.location {
+    display: flex;
+    align-items: center;
+}
+
+a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a i {
+    margin-right: 8px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #4f5a5a;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content {
+    padding: 10px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.footer-content a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+footer p strong {
+    font-weight: bold;
+}
+
+/* Body background image */
+body {
+    background-image: url("AD.jpg");
+    background-size: cover;
+    background-position: center; /* Ensures background is centered */
+}
